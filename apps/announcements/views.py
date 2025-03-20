@@ -1,3 +1,8 @@
-from django.shortcuts import render
+from django.views.generic import ListView
+from apps.announcements.models import Announcement
+from core.views import LoginRequiredMixinView
 
-# Create your views here.
+class AnnouncementListView(LoginRequiredMixinView, ListView):
+    model = Announcement
+    template_name = "announcement_list.html"
+    context_object_name = "announcements"

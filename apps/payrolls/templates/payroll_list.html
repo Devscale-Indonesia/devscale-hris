@@ -1,0 +1,25 @@
+{% extends 'dashboard_base.html' %}
+
+{% block page_name %}
+    My Payrolls
+{% endblock %}
+
+{% block dashboard_content %}
+    <main class="max-w-3xl m-auto space-y-4">
+        {% for p in payrolls %}
+            <div class="bg-white p-6 rounded-lg border border-neutral-200 flex justify-between items-center">
+            <div class="space-y-2">
+                <h3>Payroll - {{ p.month }}</h3>
+                {% load humanize %}
+                <p class="text-sm">IDR {{ employee.salary|floatformat:0|intcomma }}</p>
+            </div>
+                {% if p.is_paid %}
+                    <div class="bg-emerald-100 text-emerald-700 p-2 w-fit rounded-lg font-bold">PAID</div>
+                {% else %}
+                    <div class="bg-rose-100 text-rose-700 p-2 w-fit rounded-lg font-bold">UNPAID</div>
+                {% endif %}
+
+            </div>
+        {% endfor %}
+    </main>
+{% endblock %}
