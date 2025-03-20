@@ -16,6 +16,14 @@
     h3 {
         @apply leading-tight font-semibold text-lg;
     }
+
+    input {
+        @apply p-2 border border-neutral-200 shadow-xl shadow-neutral-50 rounded-lg outline-none focus:outline-none w-full;
+    }
+
+    button {
+        @apply bg-blue-600 p-2 rounded-lg text-white w-full;
+    }
 }
 
 @layer components {

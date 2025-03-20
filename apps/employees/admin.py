@@ -1,6 +1,11 @@
 from django.contrib import admin
 
-from .models import Employee
+from .models import Employee, EmployeeSetting
+
+@admin.register(EmployeeSetting)
+class EmployeeSettingAdmin(admin.ModelAdmin):
+    list_display = ('actor', 'role')
+    list_filter = ('actor',)
 
 
 @admin.register(Employee)

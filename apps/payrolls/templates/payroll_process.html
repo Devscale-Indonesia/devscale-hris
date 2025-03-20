@@ -1,0 +1,17 @@
+{% extends 'dashboard_base.html' %}
+
+{% block page_name %}
+    Process Payroll
+{% endblock %}
+
+{% block dashboard_content %}
+    <main class="max-w-xl m-auto space-y-4">
+    <h3>Process Payroll</h3>
+        <p>This form is to process payroll to all of Employees</p>
+        <form method="post">
+            {% csrf_token %}
+            <input name="action" value="process" hidden />
+            <button>Process</button>
+        </form>
+    </main>
+{% endblock %}

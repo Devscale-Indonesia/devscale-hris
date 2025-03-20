@@ -49,7 +49,7 @@ INSTALLED_APPS = [
     "apps.employees",
     "apps.payrolls",
     "apps.leaves",
-    "apps.auth"
+    "apps.authentications"
 ]
 
 MIDDLEWARE = [
@@ -104,16 +104,16 @@ DATABASES = {
 
 AUTH_PASSWORD_VALIDATORS = [
     {
-        "NAME": "django.contrib.auth.password_validation.UserAttributeSimilarityValidator",
+        "NAME": "django.contrib.authentications.password_validation.UserAttributeSimilarityValidator",
     },
     {
-        "NAME": "django.contrib.auth.password_validation.MinimumLengthValidator",
+        "NAME": "django.contrib.authentications.password_validation.MinimumLengthValidator",
     },
     {
-        "NAME": "django.contrib.auth.password_validation.CommonPasswordValidator",
+        "NAME": "django.contrib.authentications.password_validation.CommonPasswordValidator",
     },
     {
-        "NAME": "django.contrib.auth.password_validation.NumericPasswordValidator",
+        "NAME": "django.contrib.authentications.password_validation.NumericPasswordValidator",
     },
 ]
 

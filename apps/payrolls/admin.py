@@ -5,4 +5,4 @@ from .models import Payroll
 
 @admin.register(Payroll)
 class PayrollAdmin(admin.ModelAdmin):
-    list_display = ("actor","month", "is_paid")
+    list_display = ("actor","month", "status")

@@ -14,9 +14,9 @@
                 <p class="text-sm">IDR {{ employee.salary|floatformat:0|intcomma }}</p>
             </div>
                 {% if p.is_paid %}
-                    <div class="bg-emerald-100 text-emerald-700 p-2 w-fit rounded-lg font-bold">PAID</div>
+                    <div class="bg-emerald-100 text-emerald-700 p-2 w-fit rounded-lg font-bold text-xs">PAID</div>
                 {% else %}
-                    <div class="bg-rose-100 text-rose-700 p-2 w-fit rounded-lg font-bold">UNPAID</div>
+                    <div class="bg-rose-100 text-rose-700 p-2 w-fit rounded-lg font-bold text-xs">UNPAID</div>
                 {% endif %}
 
             </div>
