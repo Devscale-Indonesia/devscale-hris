@@ -22,7 +22,7 @@
     }
 
     button {
-        @apply bg-blue-600 p-2 rounded-lg text-white w-full;
+        @apply cursor-pointer bg-blue-600 p-2 rounded-lg text-white w-full hover:opacity-80;
     }
 }
 

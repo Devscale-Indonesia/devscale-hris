@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from django.views.generic import ListView, View
 from apps.payrolls.models import Payroll
 from apps.employees.models import Employee, EmployeeSetting
+from apps.payrolls.tasks import process_payrolls_task
 from core.views import LoginRequiredMixinView
 
 
@@ -33,6 +34,6 @@ class PayrollProcessView(LoginRequiredMixinView, View):
         action = request.POST.get('action')
 
         if action == 'process':
-            print("Processing payroll!!!")
+            process_payrolls_task()
 
         return redirect('payroll-process')

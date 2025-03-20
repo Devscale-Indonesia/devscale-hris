@@ -30,7 +30,7 @@ SECRET_KEY = "django-insecure-v-ks&#r47w45wyq@0w^@^0sbb@gy#jp%4b#$vg8bfpsj$pks_+
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*"]
 
 
 # Application definition
@@ -49,7 +49,8 @@ INSTALLED_APPS = [
     "apps.employees",
     "apps.payrolls",
     "apps.leaves",
-    "apps.authentications"
+    "apps.authentications",
+    "huey.contrib.djhuey"
 ]
 
 MIDDLEWARE = [

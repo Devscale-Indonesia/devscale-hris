@@ -13,10 +13,12 @@
                 {% load humanize %}
                 <p class="text-sm">IDR {{ employee.salary|floatformat:0|intcomma }}</p>
             </div>
-                {% if p.is_paid %}
+                {% if p.status == 'paid' %}
                     <div class="bg-emerald-100 text-emerald-700 p-2 w-fit rounded-lg font-bold text-xs">PAID</div>
+                {% elif p.status == 'processing' %}
+                    <div class="bg-yellow-100 text-yellow-700 p-2 w-fit rounded-lg font-bold text-xs">PROCESSING</div>
                 {% else %}
-                    <div class="bg-rose-100 text-rose-700 p-2 w-fit rounded-lg font-bold text-xs">UNPAID</div>
+                    <div class="bg-rose-100 text-rose-700 p-2 w-fit rounded-lg font-bold text-xs">PENDING</div>
                 {% endif %}
 
             </div>

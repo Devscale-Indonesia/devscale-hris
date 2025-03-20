@@ -9,6 +9,6 @@ PAYROLL_STATUS_CHOICES = (
 )
 
 class Payroll(BaseModel):
-    month = models.DateField()
+    month = models.DateField(auto_now_add=True)
     amount = models.DecimalField(max_digits=10, decimal_places=2, default=0)
     status = models.CharField(max_length=100, choices=PAYROLL_STATUS_CHOICES, default='pending')
