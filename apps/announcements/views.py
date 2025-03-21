@@ -1,4 +1,5 @@
-from django.views.generic import ListView
+from django.shortcuts import redirect
+from django.views.generic import ListView, View
 from apps.announcements.models import Announcement
 from core.views import LoginRequiredMixinView
 from apps.employees.models import EmployeeSetting
@@ -14,3 +15,7 @@ class AnnouncementListView(LoginRequiredMixinView, ListView):
 
         context["user_settings"] = user_settings
         return context
+
+class DefaultView(View):
+    def get(self, request, *args, **kwargs):
+        return redirect('announcement-list')
